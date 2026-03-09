@@ -1,10 +1,11 @@
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins "*" # In development, allow all origins for easier mobile testing
+    origins "http://localhost:8081", "http://localhost:19006", "http://localhost:3000", "*"
 
     resource "*",
       headers: :any,
       expose: ["Authorization"],
-      methods: [:get, :post, :put, :patch, :delete, :options, :head]
+      methods: [:get, :post, :put, :patch, :delete, :options, :head],
+      credentials: false
   end
 end
