@@ -1,0 +1,95 @@
+# ================================
+# Environment variables
+# ================================
+.env
+.env.local
+.env.*.local
+
+# ================================
+# Ruby / Rails
+# ================================
+*.gem
+*.rbc
+/.config
+/coverage/
+/InstalledFiles
+/pkg/
+/spec/reports/
+/spec/examples.txt
+/test/tmp/
+/test/version_tmp/
+/tmp/
+
+# Used by dotenv before Rails boots
+backend/.env
+
+# Rails specific
+backend/log/*
+!backend/log/.keep
+backend/tmp/
+backend/public/system
+backend/public/uploads
+backend/storage/*
+!backend/storage/.keep
+backend/.byebug_history
+
+# Bundler
+backend/.bundle/
+backend/vendor/bundle
+backend/Gemfile.lock
+
+# ================================
+# Node / Expo / React Native
+# ================================
+node_modules/
+app/node_modules/
+.expo/
+app/.expo/
+dist/
+app/dist/
+web-build/
+app/web-build/
+
+# React Native
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+
+# Expo
+.expo-shared/
+
+# EAS
+app/.eas/
+
+# ================================
+# Claude Code
+# ================================
+.claude/
+
+# ================================
+# Editors
+# ================================
+.idea/
+*.swp
+*.swo
+*.iml
+.vscode/
+
+# ================================
+# OS artifacts
+# ================================
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ================================
+# Misc
+# ================================
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

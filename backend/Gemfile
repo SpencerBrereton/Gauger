@@ -1,0 +1,38 @@
+source "https://rubygems.org"
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+
+ruby "~> 3.4"
+
+# Core
+gem "rails", "~> 7.1"
+gem "pg", "~> 1.5"
+gem "puma", "~> 6.4"
+gem "bootsnap", require: false
+gem "tzinfo-data", platforms: %i[ mswin mingw x64_mingw jruby ]
+
+# Auth
+gem "devise", "~> 4.9"
+gem "devise-jwt", "~> 0.11"
+
+# File storage (S3-compatible for Cloudflare R2)
+gem "aws-sdk-s3", require: false
+
+# HTTP client (used for Resend email API)
+gem "httparty", "~> 0.21"
+
+# CORS
+gem "rack-cors", "~> 2.0"
+
+# Environment variables
+gem "dotenv-rails", "~> 3.1", groups: [:development, :test]
+
+group :development, :test do
+  gem "debug", platforms: %i[mri mingw x64_mingw]
+  gem "rspec-rails", "~> 6.1"
+  gem "factory_bot_rails", "~> 6.4"
+  gem "faker", "~> 3.2"
+end
+
+group :development do
+  gem "listen", "~> 3.8"
+end

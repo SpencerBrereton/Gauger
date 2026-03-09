@@ -1,0 +1,42 @@
+services:
+  - type: web
+    name: gauger-backend
+    env: ruby
+    rootDir: backend
+    buildCommand: "bundle install && bundle exec rails assets:precompile && bundle exec rails db:migrate"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: RAILS_ENV
+        value: production
+      - key: NODE_VERSION
+        value: 18.17.0
+      - key: RAILS_MASTER_KEY
+        sync: false
+      - key: DEVISE_JWT_SECRET_KEY
+        generateValue: true
+      - key: SUPABASE_DB_HOST
+        sync: false
+      - key: SUPABASE_DB_NAME
+        sync: false
+      - key: SUPABASE_DB_USER
+        sync: false
+      - key: SUPABASE_DB_PASSWORD
+        sync: false
+      - key: SUPABASE_DB_PORT
+        value: "6543"
+      - key: R2_ACCOUNT_ID
+        sync: false
+      - key: R2_ACCESS_KEY_ID
+        sync: false
+      - key: R2_SECRET_ACCESS_KEY
+        sync: false
+      - key: R2_BUCKET
+        sync: false
+      - key: ACTIVE_STORAGE_SERVICE
+        value: cloudflare_r2
+      - key: RESEND_API_KEY
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
