@@ -3,7 +3,7 @@ services:
     name: gauger-backend
     env: ruby
     rootDir: backend
-    buildCommand: "bundle install && bundle exec rails assets:precompile && bundle exec rails db:migrate"
+    buildCommand: "bundle install && bundle exec rails db:migrate"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: RAILS_ENV
@@ -12,6 +12,8 @@ services:
         value: 18.17.0
       - key: RAILS_MASTER_KEY
         sync: false
+      - key: SECRET_KEY_BASE
+        generateValue: true
       - key: DEVISE_JWT_SECRET_KEY
         generateValue: true
       - key: SUPABASE_DB_HOST
