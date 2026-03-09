@@ -124,6 +124,10 @@ export default function DashboardScreen({ navigation }) {
             <MaterialCommunityIcons name="gas-station" size={20} color={THEME.primary} />
             <Text style={styles.actionText}>Add Mileage</Text>
           </TouchableOpacity>
+          <TouchableOpacity style={styles.actionBtn} onPress={() => navigation.navigate("Invoices", { screen: "InvoiceForm" })} testID="dashboard-add-invoice-button">
+            <MaterialCommunityIcons name="file-document-plus" size={20} color={THEME.primary} />
+            <Text style={styles.actionText}>Add Invoice</Text>
+          </TouchableOpacity>
           <TouchableOpacity style={styles.actionBtn} onPress={() => navigation.navigate("Expenses", { screen: "Categories" })} testID="dashboard-manage-categories-button">
             <MaterialCommunityIcons name="tag-multiple" size={20} color={THEME.primary} />
             <Text style={styles.actionText}>Categories</Text>

@@ -6,7 +6,7 @@ module Api
       # GET /api/v1/categories
       def index
         categories = current_user.categories.order(:name)
-        render json: categories
+        render json: categories.map { |c| c.as_json.merge(expenses_count: c.expenses.count) }
       end
 
       # GET /api/v1/categories/:id
