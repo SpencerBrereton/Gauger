@@ -6,7 +6,7 @@ default: &default
   database: <%= ENV["SUPABASE_DB_NAME"] %>
   username: <%= ENV["SUPABASE_DB_USER"] %>
   password: <%= ENV["SUPABASE_DB_PASSWORD"] %>
-  port: <%= ENV.fetch("SUPABASE_DB_PORT") { 5432 } %>
+  port: <%= ENV.fetch("SUPABASE_DB_PORT") { 6543 } %>
   sslmode: require
   prepared_statements: false
 
