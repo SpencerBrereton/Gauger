@@ -76,7 +76,18 @@ const useAuthStore = create((set, get) => ({
       return { success: true };
     } catch (error) {
       set({ isLoading: false });
-      const errors = error.response?.data?.errors || ["Registration failed."];
+      console.error("[signUp] error:", error.message);
+      if (error.response) {
+        console.error("[signUp] status:", error.response.status, "data:", JSON.stringify(error.response.data));
+      } else if (error.request) {
+        console.error("[signUp] no response — network error or wrong URL");
+      }
+      const errors = error.response?.data?.errors ||
+        (error.code === "ECONNABORTED"
+          ? ["Request timed out. The server may be starting up — please try again."]
+          : !error.response
+          ? ["Could not reach the server. Check your connection and try again."]
+          : ["Registration failed."]);
       return { success: false, errors };
     }
   },

@@ -147,7 +147,7 @@ export default function LoginScreen() {
     >
       <View style={styles.card}>
         <Text style={styles.logo}>Gauger</Text>
-        <Text style={styles.subtitle}>Contractor Expense Tracker</Text>
+        <Text style={styles.subtitle}>Expense Tracking</Text>
 
         {!!errorMsg && (
           <View style={styles.errorBanner}>
