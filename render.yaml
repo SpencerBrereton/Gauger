@@ -3,7 +3,8 @@ services:
     name: gauger-backend
     env: ruby
     rootDir: backend
-    buildCommand: "mkdir -p tmp/pids && bundle install && bundle exec rails db:migrate"
+    buildCommand: "mkdir -p tmp/pids && bundle install"
+    preDeployCommand: "bundle exec rails db:migrate"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: RAILS_ENV
@@ -42,3 +43,15 @@ services:
         sync: false
       - key: FRONTEND_URL
         sync: false
+  - type: static
+    name: gauger-web
+    rootDir: app
+    buildCommand: npm install && npx expo export --platform web
+    publishDir: dist
+    envVars:
+      - key: EXPO_PUBLIC_API_BASE_URL
+        value: https://gauger.onrender.com/api/v1
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
