@@ -48,7 +48,7 @@ services:
     env: static
     rootDir: app
     buildCommand: npm install && npx expo export --platform web
-    publishDir: dist
+    staticPublishPath: dist
     envVars:
       - key: EXPO_PUBLIC_API_BASE_URL
         value: https://gauger.onrender.com/api/v1
