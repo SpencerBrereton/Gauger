@@ -1,11 +1,7 @@
 import axios from "axios";
-import Constants from "expo-constants";
 import storage from "../utils/storage";
 
-const API_BASE_URL =
-  process.env.EXPO_PUBLIC_API_BASE_URL ||
-  Constants.expoConfig?.extra?.apiBaseUrl ||
-  "https://gauger.onrender.com/api/v1";
+const API_BASE_URL = "https://gauger-backend.onrender.com/api/v1";
 
 console.log("[API] Base URL:", API_BASE_URL);
 
@@ -17,7 +13,7 @@ const client = axios.create({
     "Content-Type": "application/json",
     Accept: "application/json",
   },
-  timeout: 45000,
+  timeout: 90000,
 });
 
 // Request interceptor: attach JWT token to every request

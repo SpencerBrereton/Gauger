@@ -28,7 +28,7 @@ export default {
     extra: {
       apiBaseUrl:
         process.env.EXPO_PUBLIC_API_BASE_URL ||
-        "https://gauger.onrender.com/api/v1",
+        "https://gauger-backend.onrender.com/api/v1",
       eas: {
         projectId: "9d8dc046-d518-4317-9986-e1b1854a8599",
       },

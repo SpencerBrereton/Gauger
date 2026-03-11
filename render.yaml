@@ -51,7 +51,7 @@ services:
     staticPublishPath: dist
     envVars:
       - key: EXPO_PUBLIC_API_BASE_URL
-        value: https://gauger.onrender.com/api/v1
+        value: https://gauger-backend.onrender.com/api/v1
     routes:
       - type: rewrite
         source: /*
